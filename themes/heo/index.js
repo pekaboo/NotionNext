@@ -33,6 +33,7 @@ import Header from './components/Header'
 import Hero from './components/Hero'
 import LatestPostsGroup from './components/LatestPostsGroup'
 import { NoticeBar } from './components/NoticeBar'
+import { SwipperBar } from './components/SwipperBar'
 import PostAdjacent from './components/PostAdjacent'
 import PostCopyright from './components/PostCopyright'
 import PostHeader from './components/PostHeader'
@@ -65,6 +66,7 @@ const LayoutBase = props => {
       {router.route === '/' ? (
         <>
           <NoticeBar />
+          <SwipperBar />
           <Hero {...props} />
         </>
       ) : null}
@@ -156,7 +158,7 @@ const LayoutIndex = props => {
  */
 const LayoutPostList = props => {
   return (
-    <div id='post-outer-wrapper' className='px-5  md:px-0'>
+    <div id='post-outer-wrapper' className='px-5 md:px-0'>
       {/* 文章分类条 */}
       <CategoryBar {...props} />
       {siteConfig('POST_LIST_STYLE') === 'page' ? (
@@ -195,7 +197,7 @@ const LayoutSearch = props => {
   }, [])
   return (
     <div {...props} currentSearch={currentSearch}>
-      <div id='post-outer-wrapper' className='px-5  md:px-0'>
+      <div id='post-outer-wrapper' className='px-5 md:px-0'>
         {!currentSearch ? (
           <SearchNav {...props} />
         ) : (
@@ -298,7 +300,7 @@ const LayoutSlug = props => {
             <article itemScope itemType='https://schema.org/Movie'>
               {/* Notion文章主体 */}
               <section
-                className='wow fadeInUp p-5 justify-center mx-auto'
+                className='justify-center p-5 mx-auto wow fadeInUp'
                 data-wow-delay='.2s'>
                 <WWAds orientation='horizontal' className='w-full' />
                 {post && <NotionPage post={post} />}
@@ -329,9 +331,9 @@ const LayoutSlug = props => {
                   <AdSlot />
                 </div>
                 {/* 评论互动 */}
-                <div className='duration-200 overflow-x-auto px-5'>
+                <div className='px-5 overflow-x-auto duration-200'>
                   <div className='text-2xl dark:text-white'>
-                    <i className='fas fa-comment mr-1' />
+                    <i className='mr-1 fas fa-comment' />
                     {locale.COMMON.COMMENTS}
                   </div>
                   <Comment frontMatter={post} className='' />
@@ -376,19 +378,19 @@ const Layout404 = props => {
             <div className='error-content flex flex-col md:flex-row w-full mt-12 h-[30rem] md:h-96 justify-center items-center bg-white dark:bg-[#1B1C20] border dark:border-gray-800 rounded-3xl'>
               {/* 左侧动图 */}
               <LazyImage
-                className='error-img h-60 md:h-full p-4'
+                className='p-4 error-img h-60 md:h-full'
                 src={
                   'https://bu.dusays.com/2023/03/03/6401a7906aa4a.gif'
                 }></LazyImage>
 
               {/* 右侧文字 */}
-              <div className='error-info flex-1 flex flex-col justify-center items-center space-y-4'>
-                <h1 className='error-title font-extrabold md:text-9xl text-7xl dark:text-white'>
+              <div className='flex flex-col items-center justify-center flex-1 space-y-4 error-info'>
+                <h1 className='font-extrabold error-title md:text-9xl text-7xl dark:text-white'>
                   404
                 </h1>
                 <div className='dark:text-white'>请尝试站内搜索寻找文章</div>
                 <Link href='/'>
-                  <button className='bg-blue-500 py-2 px-4 text-white shadow rounded-lg hover:bg-blue-600 hover:shadow-md duration-200 transition-all'>
+                  <button className='px-4 py-2 text-white transition-all duration-200 bg-blue-500 rounded-lg shadow hover:bg-blue-600 hover:shadow-md'>
                     回到主页
                   </button>
                 </Link>
@@ -416,13 +418,13 @@ const LayoutCategoryIndex = props => {
   const { locale } = useGlobal()
 
   return (
-    <div id='category-outer-wrapper' className='mt-8 px-5 md:px-0'>
-      <div className='text-4xl font-extrabold dark:text-gray-200 mb-5'>
+    <div id='category-outer-wrapper' className='px-5 mt-8 md:px-0'>
+      <div className='mb-5 text-4xl font-extrabold dark:text-gray-200'>
         {locale.COMMON.CATEGORY}
       </div>
       <div
         id='category-list'
-        className='duration-200 flex flex-wrap m-10 justify-center'>
+        className='flex flex-wrap justify-center m-10 duration-200'>
         {categoryOptions?.map(category => {
           return (
             <Link
@@ -459,12 +461,12 @@ const LayoutTagIndex = props => {
 
   return (
     <div id='tag-outer-wrapper' className='px-5 mt-8 md:px-0'>
-      <div className='text-4xl font-extrabold dark:text-gray-200 mb-5'>
+      <div className='mb-5 text-4xl font-extrabold dark:text-gray-200'>
         {locale.COMMON.TAGS}
       </div>
       <div
         id='tag-list'
-        className='duration-200 flex flex-wrap space-x-5 space-y-5 m-10 justify-center'>
+        className='flex flex-wrap justify-center m-10 space-x-5 space-y-5 duration-200'>
         {tagOptions.map(tag => {
           return (
             <Link
