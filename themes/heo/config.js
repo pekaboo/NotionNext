@@ -12,9 +12,9 @@ const CONFIG = {
     { title: '访问文档中心获取更多帮助', url: 'https://doc.gpt123.eu.org' },
   ],
   HEO_SWIPPER_BAR: [
-    { title: '价值8w网赚项目课程分享', url: '/category/短视频',img: 'https://www.notion.so/images/page-cover/met_vincent_van_gogh_oleanders.jpg' },
     { title: '开源项目，自己动手，丰衣足食', url: '/category/GitHub项目',img: 'https://www.notion.so/image/https%3A%2F%2Fwww.ahhhhfs.com%2Fwp-content%2Fuploads%2F2024%2F08%2F%E4%BF%84%E7%BD%97%E6%96%AF%E6%96%B9%E5%9D%97%EF%BC%9A%E4%BF%84%E7%BD%97%E6%96%AF%E6%96%B9%E5%9D%97%E5%9C%A8%E7%BA%BF%E5%85%8D%E8%B4%B9%E7%8E%A9-Featured-Image-300x200.jpg?t=2c4469ce-376c-420b-a66d-410e29c34f0b' },
-   ],
+    { title: '价值8w网赚项目课程分享', url: '/category/短视频',img: 'https://www.notion.so/images/page-cover/met_vincent_van_gogh_oleanders.jpg' },
+    ],
 
   // 英雄区左右侧组件颠倒位置
   HEO_HERO_REVERSE: false,
