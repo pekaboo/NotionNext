@@ -26,3 +26,13 @@
   if(value?.format?.copied_from_pointer===undefined )
     pageCover = pageCover?`https://notion.site/image/${encodeURIComponent(pageCover)}`:''
 ```
+
+
+如果想改变主题颜色  
+<!-- bg-indig。。。o   - 》  bg-gree。。。n
+<!-- bg-blue。。。e   - 》  bg-gree。。。n
+
+bg-[#4f65f。。。0]   - 》 bg-[#2fc86。。。0]
+
+bg-[#0060e。。。0] bg-[#b7c7b3...3] -->
+<!-- 2024-09-05 12:47:30 -->
